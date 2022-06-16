@@ -7,6 +7,7 @@
 - [Given problem](#given-problem)
 - [Analysis our problem](#analysis-our-problem)
 - [Solution for this problem](#solution-for-this-problem)
+- [The structure of current project](#the-structure-of-current-project)
 - [Benefits and Drawbacks](#benefits-and-drawbacks)
 - [Wrapping up](#wrapping-up)
 
@@ -15,7 +16,11 @@
 
 ## Given problem
 
+Create a smart contract in Ethereum using Solidity or Vyper or an application in Ethereum that:
+1. Mint & Transfer tokens.
+2. Set a token hard cap.
 
+Other functions that you may wish to program, it will go into the hiring consideration and the codes should be able to run on Truffle or Remix for our consideration.
 
 
 <br>
@@ -30,6 +35,13 @@
 
 ## Solution for this problem
 
+
+
+
+
+<br>
+
+## The structure of current project
 
 
 
