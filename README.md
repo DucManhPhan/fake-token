@@ -52,14 +52,34 @@ Other functions that you may wish to program, it will go into the hiring conside
 
 ## How to run the current project
 
+1. Build our source code into byte code.
 
+    ```bash
+    truffle compile
+    ```
+
+2. Run our truffle server tha follow on `truffle-config.js` file.
+
+    ```bash
+    truffle develop
+    ```
+
+3. Deploy our contract to that server.
+
+    ```bash
+    truffle migrate development
+    ```
 
 
 <br>
 
 ## How to test the current project
 
+1. To run test, run the below command:
 
+    ```bash
+    truffle tests
+    ```
 
 
 <br>
