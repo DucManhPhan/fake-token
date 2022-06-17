@@ -66,8 +66,10 @@ Other functions that you may wish to program, it will go into the hiring conside
 
 ## Benefits and Drawbacks
 
+1. Benefits
 
 
+2. Drawbacks
 
 
 <br>
