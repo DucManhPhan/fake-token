@@ -8,6 +8,8 @@
 - [Analysis our problem](#analysis-our-problem)
 - [Solution for this problem](#solution-for-this-problem)
 - [The structure of current project](#the-structure-of-current-project)
+- [How to run the current project](#how-to-run-the-current-project)
+- [How to test the current project](#how-to-test-the-current-project)
 - [Benefits and Drawbacks](#benefits-and-drawbacks)
 - [Wrapping up](#wrapping-up)
 
@@ -42,6 +44,20 @@ Other functions that you may wish to program, it will go into the hiring conside
 <br>
 
 ## The structure of current project
+
+
+
+
+<br>
+
+## How to run the current project
+
+
+
+
+<br>
+
+## How to test the current project
 
 
 
