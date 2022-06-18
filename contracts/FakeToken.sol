@@ -18,11 +18,15 @@ contract FakeToken {
 
     event Transfer(address indexed from, address indexed to, uint value);
 
+    /**
+     * Constructor for create a contract Fake Token
+     * Initialize the hard capacity of the Fake Token
+     */
     constructor() {
         _owner = msg.sender;
 
         uint8 capacity = 200;
-        _mint(_owner, capacity);
+        mint(_owner, capacity);
     }
 
     /**
@@ -46,16 +50,18 @@ contract FakeToken {
      *
      * Emits a Transfer event.
      */
-    function _mint(address to, uint8 amount) internal {
+    function mint(address to, uint8 amount) public returns (bool) {
+        require(msg.sender == _owner, "Can not mint if not contract owner");
         require(to != address(0), "Receipient needs to be different zero address");
 
         _totalSupply += amount;
         _balances[to] += amount;
 
         // Overflow checks
-        require(_balances[to] >= amount && _totalSupply >= amount, "Happened overflow ");
+        require(_balances[to] >= amount && _totalSupply >= amount, "Happened overflow");
 
         emit Transfer(address(0), to, amount);
+        return true;
     }
 
     function name() public view returns (string memory) {
