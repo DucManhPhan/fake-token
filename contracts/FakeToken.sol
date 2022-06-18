@@ -3,27 +3,26 @@ pragma solidity ^0.8.10;
 
 contract FakeToken {
 
-    string private _name;
+    string private _name = "Fake Token";
 
-    string private _symbol;
+    string private _symbol = "FT";
 
-    uint256 private _totalSupply;
+    uint8 private _totalSupply;
 
     address private _owner;
 
     /**
      * Save the amount of tokens that is corresponding the specific address.
      */
-    mapping (address => uint256) private _balances;
+    mapping (address => uint8) private _balances;
 
     event Transfer(address indexed from, address indexed to, uint value);
 
-    constructor(string memory name_, string memory symbol_, uint256 totalSupply_) {
+    constructor() {
         _owner = msg.sender;
-        _name = name_;
-        _symbol = symbol_;
 
-        _mint(_owner, totalSupply_);
+        uint8 capacity = 200;
+        _mint(_owner, capacity);
     }
 
     /**
@@ -32,7 +31,7 @@ contract FakeToken {
      * Returns a boolean value indicating whether the operation succeeded.
      * Emits a Transfer event.
      */
-    function transfer(address to, uint256 amount) public returns (bool) {
+    function transfer(address to, uint8 amount) public returns (bool) {
         require(balanceOf(msg.sender) >= amount, "Insufficient funds");
 
         _balances[to] += amount;
@@ -47,14 +46,14 @@ contract FakeToken {
      *
      * Emits a Transfer event.
      */
-    function _mint(address to, uint256 amount) internal {
+    function _mint(address to, uint8 amount) internal {
         require(to != address(0), "Receipient needs to be different zero address");
 
         _totalSupply += amount;
         _balances[to] += amount;
 
         // Overflow checks
-        require(_balances[to] >= amount && _totalSupply >= amount);
+        require(_balances[to] >= amount && _totalSupply >= amount, "Happened overflow ");
 
         emit Transfer(address(0), to, amount);
     }
@@ -67,14 +66,14 @@ contract FakeToken {
         return _symbol;
     }
 
-    function totalSupply() public view returns (uint256) {
+    function totalSupply() public view returns (uint8) {
         return _totalSupply;
     }
 
     /**
      * Return the amount of tokens of the specific account
      */
-    function balanceOf(address account) public view returns (uint256) {
+    function balanceOf(address account) public view returns (uint8) {
         return _balances[account];
     }
 
